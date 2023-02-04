@@ -7,9 +7,9 @@ export class CoursesController {
     constructor(private readonly coursesService: CoursesService) {}
     
     @Get('list')
-    findAll(@Res() response) {
+    findAll() {
         // return 'Listagem de cursos';
-        return response.status(200).send('Lista de cursos')
+        return this.coursesService.findAll();
     }
     
     @Get(':id')
@@ -17,23 +17,22 @@ export class CoursesController {
     findOne(
         @Param('id') id: string
     ) {
-        return `Curso #${id}`;
+        return this.coursesService.findOne(id);
     }
 
     @Post('create')
-    @HttpCode(HttpStatus.NO_CONTENT)
-    create(@Body('name') body) {
-        return body;
+    create(@Body() body) {
+        return this.coursesService.create(body);
     }
 
     @Patch('/update/:id')
     update(@Param('id') id: string, @Body() body) {
-        return `Atualização do Curso #${id}`
+        return this.coursesService.update(id, body);
     }
 
     @Delete('/delete/:id')
     destroy(@Param('id') id: string){
-        return `O curso foi deletado #${id}`;
+        return this.coursesService.destroy(id);
     }
 
 }
