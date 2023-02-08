@@ -34,7 +34,7 @@ export class CoursesService {
     create(createCourseDto: any) {
         try {
             this.courses.push(createCourseDto);
-            return `Curso foi criado`;
+            return createCourseDto;
         }
         catch(error) {
             throw new HttpException(`Error in Created course`, HttpStatus.NOT_ACCEPTABLE);
