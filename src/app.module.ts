@@ -15,7 +15,9 @@ import { CoursesModule } from './courses/courses.module';
       password: 'docker',
       database: 'postgres',
       autoLoadEntities: true,
-      synchronize: true,
+      synchronize: true, //usar somente em dev
+      retryAttempts: 3,
+      retryDelay: 5000,
     })
   ],
   controllers: [AppController],
