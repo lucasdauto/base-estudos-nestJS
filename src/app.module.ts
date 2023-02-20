@@ -8,12 +8,12 @@ import { CoursesModule } from './courses/courses.module';
   imports: [
     CoursesModule,
     TypeOrmModule.forRoot({
-      type: 'postgres',
+      type: 'mysql',
       host: 'localhost',
-      port: 5432,
-      username: 'postgres',
+      port: 3306,
+      username: 'root',
       password: 'docker',
-      database: 'postgres',
+      database: 'db_courses_nest',
       autoLoadEntities: true,
       synchronize: true, //usar somente em dev
       retryAttempts: 3,
