@@ -71,7 +71,7 @@ export class CoursesService {
             throw new NotFoundException(`Course ID ${id} not found`);
         }
 
-        return this.courseRepository.remove(course);
+        return this.courseRepository.softDelete({ id: +id });
 
     }
 
