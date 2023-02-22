@@ -11,11 +11,11 @@ import { CoursesModule } from './courses/courses.module';
       type: 'mysql',
       host: 'localhost',
       port: 3306,
-      username: 'root',
-      password: 'docker',
-      database: 'db_courses_nest',
+      username: "root",
+      password: "docker",
+      database: "db_courses_nest",
       autoLoadEntities: true,
-      // synchronize: true, //usar somente em dev
+      //synchronize: process.env.DB_SYNCHRONIZE ? true : false, //usar somente em dev
       retryAttempts: 3,
       retryDelay: 5000,
     })
