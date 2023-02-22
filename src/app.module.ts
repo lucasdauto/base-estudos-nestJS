@@ -15,7 +15,7 @@ import { CoursesModule } from './courses/courses.module';
       password: 'docker',
       database: 'db_courses_nest',
       autoLoadEntities: true,
-      synchronize: true, //usar somente em dev
+      // synchronize: true, //usar somente em dev
       retryAttempts: 3,
       retryDelay: 5000,
     })
